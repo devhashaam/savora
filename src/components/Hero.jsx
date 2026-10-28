@@ -28,6 +28,8 @@ export default function Hero() {
             {w}
           </motion.span>
         ))}
+        {/* Fixed break: the rotating word always starts line 2, so word length never reflows the headline */}
+        <br />
         <span className="rotator" aria-live="off">
           <AnimatePresence mode="wait" initial={false}>
             <motion.span
@@ -42,7 +44,8 @@ export default function Hero() {
             </motion.span>
           </AnimatePresence>
         </span>
-        <motion.span variants={word} className="word">
+        {/* layout="position": glides sideways as the word before it changes width */}
+        <motion.span variants={word} layout="position" className="word">
           tonight.
         </motion.span>
       </motion.h1>

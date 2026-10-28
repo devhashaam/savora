@@ -59,9 +59,11 @@ button { font: inherit; }
 
 /* ===== Hero ===== */
 .hero { padding: clamp(2.5rem, 8vw, 5rem) 0 1.5rem; }
-.hero h1 { font-size: clamp(2.3rem, 6vw + 0.5rem, 4.6rem); letter-spacing: -0.03em; perspective: 600px; }
+.hero h1 { font-size: clamp(2rem, 6vw + 0.5rem, 4.6rem); letter-spacing: -0.03em; perspective: 600px; }
+/* Smallest phones: keep "comforting tonight." on one line so the headline stays two lines for every word */
+@media (max-width: 360px) { .hero h1 { font-size: 1.8rem; } }
 .word { display: inline-block; margin-right: 0.25em; }
-.rotator { display: inline-block; position: relative; overflow: hidden; vertical-align: bottom; margin-right: 0.25em; padding-bottom: 0.06em; }
+.rotator { display: inline-block; position: relative; overflow: hidden; vertical-align: top; margin-right: 0.25em; padding-bottom: 0.06em; }
 /* Solid colour, not gradient text: background-clip:text fails to paint inside the 3D (perspective) headline in Chrome */
 .rotating-word { display: inline-block; color: var(--accent); }
 .hero-sub { color: var(--muted); font-size: clamp(1rem, 1vw + 0.8rem, 1.2rem); max-width: 52ch; margin: 1rem 0 0; }
